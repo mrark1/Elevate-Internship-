@@ -1,0 +1,15 @@
+{
+  "name": "elevate-sde-task-4",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CredVault full-stack certificate issuing and verification platform",
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace frontend",
+    "start:api": "npm run start --workspace backend",
+    "test": "npm test --workspace backend"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" },
+  "engines": { "node": ">=20" }
+}
